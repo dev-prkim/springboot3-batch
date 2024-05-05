@@ -1,7 +1,7 @@
-package com.example.springboot3batch.domain.model;
+package com.example.springboot3batch.model;
 
-import com.example.springboot3batch.domain.model.type.UserStatusType;
-import com.example.springboot3batch.domain.model.type.converter.UserStatusConverter;
+import com.example.springboot3batch.model.type.UserStatusType;
+import com.example.springboot3batch.model.type.converter.UserStatusConverter;
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
@@ -11,9 +11,11 @@ import jakarta.persistence.Id;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Comment;
 
+@Getter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -39,5 +41,11 @@ public class Users {
 
   @Comment("탈퇴 회원 삭제 예정일시")
   private LocalDateTime deleteAt;
+
+  public void onWithdrawalRequest() {
+    int daysUntilDeletion = 3;
+    this.status = UserStatusType.WITHDRAWAL_PENDING;
+    this.deleteAt = LocalDateTime.now().plusDays(daysUntilDeletion);
+  }
 
 }

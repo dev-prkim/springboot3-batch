@@ -1,8 +1,5 @@
-package com.example.springboot3batch.domain.model;
+package com.example.springboot3batch.model;
 
-import com.example.springboot3batch.domain.model.type.UserStatusType;
-import com.example.springboot3batch.domain.model.type.converter.UserStatusConverter;
-import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import java.time.LocalDateTime;
@@ -25,8 +22,8 @@ public class UserWithdrawal {
 
   private String name;
 
-  @Convert(converter = UserStatusConverter.class)
-  private UserStatusType status;
+  private String status;
 
   private LocalDateTime deleteAt;
+
 }

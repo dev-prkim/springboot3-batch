@@ -1,7 +1,7 @@
-package com.example.springboot3batch.domain.model;
+package com.example.springboot3batch.model;
 
-import com.example.springboot3batch.domain.model.type.ProductStatusType;
-import com.example.springboot3batch.domain.model.type.converter.ProductStatusConverter;
+import com.example.springboot3batch.model.type.ProductStatusType;
+import com.example.springboot3batch.model.type.converter.ProductStatusConverter;
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;

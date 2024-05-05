@@ -14,10 +14,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EntityScan(
-    basePackages = "com.example.springboot3batch.domain.model"
+    basePackages = "com.example.springboot3batch.model"
 )
 @EnableJpaRepositories(
-    basePackages = "com.example.springboot3batch.domain.repository"
+    basePackages = "com.example.springboot3batch.repository"
 )
 @EnableJpaAuditing
 @EnableTransactionManagement

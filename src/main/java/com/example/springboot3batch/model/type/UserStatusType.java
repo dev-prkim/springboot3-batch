@@ -1,4 +1,4 @@
-package com.example.springboot3batch.domain.model.type;
+package com.example.springboot3batch.model.type;
 
 import java.util.Arrays;
 import java.util.NoSuchElementException;
