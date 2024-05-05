@@ -11,9 +11,11 @@ import jakarta.persistence.Id;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Comment;
 
+@Getter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -41,5 +43,13 @@ public class Product {
   private LocalDateTime saleEndAt;
 
   private Integer amount;
+
+  public void activateProduct() {
+    this.status = ProductStatusType.ON_SALE;
+  }
+
+  public void deactivateProduct() {
+    this.status = ProductStatusType.SALE_SUSPENDED;
+  }
 
 }

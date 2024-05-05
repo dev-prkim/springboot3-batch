@@ -1,4 +1,4 @@
-package com.example.springboot3batch.repository;
+package com.example.springboot3batch.repository.user;
 
 import com.example.springboot3batch.model.QUsers;
 import com.example.springboot3batch.model.Users;
@@ -24,7 +24,7 @@ public class UsersRepositoryImpl implements QUsersRepository {
         .selectFrom(users)
         .where(
             eqStatus(UserStatusType.WITHDRAWAL_PENDING),
-            isDeletionTimePassed()
+            isDeleteAtPassed()
         )
         .fetch();
   }
@@ -33,7 +33,7 @@ public class UsersRepositoryImpl implements QUsersRepository {
     return users.status.eq(status);
   }
 
-  private BooleanExpression isDeletionTimePassed() {
+  private BooleanExpression isDeleteAtPassed() {
     return users.deleteAt.before(LocalDateTime.now());
   }
 }

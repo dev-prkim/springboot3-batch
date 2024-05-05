@@ -1,7 +1,7 @@
 package com.example.springboot3batch.job.userwithdrawal;
 
 import com.example.springboot3batch.model.UserWithdrawal;
-import com.example.springboot3batch.repository.UserWithdrawalRepository;
+import com.example.springboot3batch.repository.user.UserWithdrawalRepository;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
